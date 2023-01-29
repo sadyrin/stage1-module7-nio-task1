@@ -18,7 +18,6 @@ public class FileReader {
     public Profile getDataFromFile(File file) {
 
         Path path;
-
         try {
             path = Paths.get(file.getAbsolutePath());
 
@@ -38,7 +37,7 @@ public class FileReader {
             }
 
         } catch (IOException e) {
-            System.out.println("Something went wrong while reading " + file + ". " + e.getMessage());
+            e.printStackTrace();
         }
     
         return new Profile(name, age, email, phone);
